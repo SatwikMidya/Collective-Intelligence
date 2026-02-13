@@ -11,18 +11,32 @@ Understand what is Collective Intelligence.
 Start building a movie recommndation program where it evaluates simillarity scores based on movie critic scores and users score and then recommends movies that user havent watched but may like based on his past movie reviews.
 
 Pearson Corelation Score : 
+
 $$ 
-    (r=\frac{n\sum xy-(\sum x)(\sum y)}{\sqrt{[n\sum x^{2}-(\sum x)^{2}][n\sum y^{2}-(\sum y)^{2}]}}) 
+    r=\frac{n\sum xy-(\sum x)(\sum y)}{\sqrt{[n\sum x^{2}-(\sum x)^{2}][n\sum y^{2}-(\sum y)^{2}]}}
 $$
 
 
 Day something
 
-    See how changing the people with movies in product solves a very interesting probelm, 
-    say anyone wants to find similar movies based how different critics have scored the running the same simimalrity functions on inverted(transformed) pref dictionary actually helps finding this.
-    Also if anyone wants to find recommended critics for a new movie one can run getrecommendation function on the inverted(transformed) dictionary. Cool Stuff
-    Same can be done for Products in a grocerry think deeply.
+See how changing the people with movies in product solves a very interesting probelm, 
+say anyone wants to find similar movies based how different critics have scored the running the same simimalrity functions on inverted(transformed) pref dictionary actually helps finding this.
+Also if anyone wants to find recommended critics for a new movie one can run getrecommendation function on the inverted(transformed) dictionary. Cool Stuff
+Same can be done for Products in a grocerry think deeply.
 
 
 ![alt text](image.png)
 
+Day something +1 
+
+Exercise 1 
+
+Tanimoto score 
+Mainly used in chemoinfographics to check simililarity between molecules using molecular fingerprints.
+Tanimoto coefficient is defined as Number of shared feautures devided by Total number of unique features present in both set
+
+$$
+T(x, y) =
+\frac{\sum_{i=1}^{n} x_i y_i}
+{\sum_{i=1}^{n} x_i^2 + \sum_{i=1}^{n} y_i^2 - \sum_{i=1}^{n} x_i y_i}
+$$
