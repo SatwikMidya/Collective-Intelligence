@@ -40,3 +40,11 @@ T(x, y) =
 \frac{\sum_{i=1}^{n} x_i y_i}
 {\sum_{i=1}^{n} x_i^2 + \sum_{i=1}^{n} y_i^2 - \sum_{i=1}^{n} x_i y_i}
 $$
+
+Pearson Compares rating behavior good for user based filtering
+Tanimoto compares audience overlap ration good for Item based filtering (can be used as 
+say MovieA is liked(1) by (1,0,1,1,0) and MovieB have a vector(0,1,1,1,0) Tanimoto comapres based on this two vector how much similar is them.lets say C has a vector (1,0,0,1,1) then calculate the similarity of MovieA and MovieB with C and then you can say wheather to recommend MovieC or not to the user who liked A)
+
+or We can use Tanimoto score to calculate similiarity between two people on the basis whether they have watched same (overlap) of movies or not 
+or 
+we can do vise versa for items wheather two movie is seen by same audience or not. 
