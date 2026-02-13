@@ -17,9 +17,10 @@ Pearson Corelation Score :
 Day something
 
     See how changing the people with movies in product solves a very interesting probelm, 
-    say anyone wants to find similar movies based how different critics have scored the running the same simimalrity functions on inverted pref dictionary actually helps finding this.
-    Also if anyone wants to find recommended critics for a new movie one can run getrecommendation function on the inverted dictionary. Cool Stuff
+    say anyone wants to find similar movies based how different critics have scored the running the same simimalrity functions on inverted(transformed) pref dictionary actually helps finding this.
+    Also if anyone wants to find recommended critics for a new movie one can run getrecommendation function on the inverted(transformed) dictionary. Cool Stuff
     Same can be done for Products in a grocerry think deeply.
 
 
+![alt text](image.png)
 
