@@ -11,7 +11,9 @@ Understand what is Collective Intelligence.
 Start building a movie recommndation program where it evaluates simillarity scores based on movie critic scores and users score and then recommends movies that user havent watched but may like based on his past movie reviews.
 
 Pearson Corelation Score : 
-    \(r=\frac{n\sum xy-(\sum x)(\sum y)}{\sqrt{[n\sum x^{2}-(\sum x)^{2}][n\sum y^{2}-(\sum y)^{2}]}}\)
+    $$ 
+    (r=\frac{n\sum xy-(\sum x)(\sum y)}{\sqrt{[n\sum x^{2}-(\sum x)^{2}][n\sum y^{2}-(\sum y)^{2}]}}) 
+    $$
 
 
 Day something
