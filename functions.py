@@ -21,7 +21,7 @@ def sim_distance(prefs,person1,person2):
     # Add all sqaure of differences
     sumofSqaures =  sum([pow(prefs[person1][item]-prefs[person2][item],2) 
                         for item in prefs[person1] if item in prefs[person2]])
-    return 1/(1+sumofSqaures)
+    return 1/(1+sumofSqaures)   # to ensure large number == more similarity
 
 
 # Pearson Corelation score 
@@ -80,6 +80,58 @@ def getRecommendation(prefs,person,similarity=sim_pearson):
     rankings.sort()
     rankings.reverse()
     return rankings
+
+def transformPrefs(prefs):
+    result={}
+    for person in prefs:
+        for item in prefs[person]:
+            result.setdefault(item,{})
+            result[item][person]=prefs[person][item]
+    
+    return result
+
+
+    
+# Item Based Collaborative filtering 
+
+def CalculateSimilarItems(prefs,n=10):
+    # Create a dictionary storing
+    # which items are one most similar to
+    results={}
+
+    # inversing the preference metric to be item centric
+    itemPrefs=transformPrefs(prefs)
+    c=0
+    for item in itemPrefs:
+        # status for large data
+        c+=1
+        if c%100==0: print("%d/%d" % (c,len(itemPrefs)))
+        # similar items
+        scores=topMatches(itemPrefs,item,n=5,similarity=sim_pearson)
+        results[item]=scores
+    return results
+
+def getRecommendation(prefs,itemMatch,user):
+    userRatings=prefs[user]
+    scores={}
+    totalSim={}
+
+    for(item,rating) in userRatings.items():
+        for(similarity,item2) in itemMatch[item]:
+            if item2 in userRatings: continue
+
+            scores.setdefault(item2,0)
+            scores[item2]+=similarity*rating
+
+            totalSim.setdefault(item2,0)
+            totalSim[item2]+=similarity
+
+    rankings=[(score/totalSim[item],item) for item,score in scores.items()]
+
+    rankings.sort()
+    rankings.reverse()
+    return rankings
+    
 
 
 
